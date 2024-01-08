@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".fragments.ui.HomeFragment">
+
+    <View
+        android:id="@+id/bg_gradient"
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        android:background="@drawable/gradient_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_calories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-20dp"
+        android:fontFamily="@font/main_font"
+        android:gravity="center"
+        android:text="@string/calories"
+        android:textColor="@color/white"
+        android:textSize="70sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
+
+    <com.michalsvec.singlerowcalendar.calendar.SingleRowCalendar
+        android:id="@+id/main_single_row_calendar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:deselection="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLeft"
+        app:longPress="false"
+        app:multiSelection="false" />
+
+    <Button
+        android:id="@+id/btnLeft"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/ic_arrow_left_24dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toStartOf="@+id/tvMonth"
+        app:layout_constraintTop_toTopOf="@+id/tvDate" />
+
+    <Button
+        android:id="@+id/btnRight"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/ic_arrow_right_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvMonth" />
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:fontFamily="@font/main_font"
+        android:gravity="start"
+        android:text="SELECT DATE"
+        android:textColor="@color/gray"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_calories"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/tvMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:fontFamily="@font/main_font"
+        android:gravity="center"
+        android:text="Month"
+        android:textColor="@color/gray"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toStartOf="@+id/btnRight"
+        app:layout_constraintTop_toTopOf="@+id/btnLeft"
+        tools:ignore="TextContrastCheck" />
+
+    <LinearLayout
+        android:id="@+id/layout_current_statistic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout">
+
+        <TextView
+            android:id="@+id/tv_protein"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="7dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/main_font"
+            android:text="@string/protein"
+            android:textColor="@color/protein"
+            android:textSize="@dimen/nutrients_text_size"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_fat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="7dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/main_font"
+            android:text="@string/fat"
+            android:textColor="@color/fat"
+            android:textSize="@dimen/nutrients_text_size"
+            android:textStyle="bold"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/tv_carbs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="7dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/main_font"
+            android:text="@string/carb"
+            android:textColor="@color/carb"
+            android:textSize="@dimen/nutrients_text_size"
+            android:textStyle="bold"
+            tools:ignore="TextContrastCheck" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_single_row_calendar">
+
+        <com.github.mikephil.charting.charts.HorizontalBarChart
+            android:id="@+id/barChart"
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_recent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/main_font"
+        android:text="@string/recent"
+        android:textColor="@color/gray"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_current_statistic"
+        tools:ignore="TextContrastCheck" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_recent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/last_foods_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
